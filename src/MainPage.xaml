@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:CatMatch.ViewModels"
+             xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:behaviors="clr-namespace:CatMatch.Behaviors"
+             x:DataType="vm:MainViewModel"
+             x:Name="GamePage"
+             x:Class="CatMatch.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <mct:InvertedBoolConverter x:Key="InvertedBool" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid RowDefinitions="100, 150, *">
+        <Label Text="CatMatch!"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="Title"
+               FontFamily="WendyOneRegular"
+               TextColor="{DynamicResource Primary}"/>
+        
+        <Label FontSize="48"
+               Text="{Binding Timer}"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               IsVisible="{Binding MatchedCatVisible, Converter={StaticResource InvertedBool}}"
+               Grid.Row="1"/>
+
+        <VerticalStackLayout HorizontalOptions="End"
+                             VerticalOptions="Start"
+                             Margin="0,0,20,0"
+                             Grid.Row="1">
+            <Label Text="Score:"
+                   FontSize="Large"/>
+            <Label Text="{Binding Score}"
+                   FontSize="Large"
+                   HorizontalOptions="End"/>
+        </VerticalStackLayout>
+
+        <Border StrokeShape="RoundRectangle 10"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Grid.Row="1">
+            <Image Source="{Binding MatchedCat.url}"
+                   WidthRequest="150"
+                   HeightRequest="150"
+                   Aspect="AspectFill"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   IsVisible="{Binding MatchedCatVisible}" />
+        </Border>
+
+        <FlexLayout BindableLayout.ItemsSource="{Binding Cats}"
+                    AlignItems="Center"
+                    Direction="Row"
+                    Wrap="Wrap"
+                    JustifyContent="SpaceAround"
+                    AlignContent="SpaceAround"
+                    VerticalOptions="Center"
+                    HeightRequest="350"
+                    Grid.Row="2">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate x:DataType="vm:CatCardViewModel">
+                    <Border BackgroundColor="{AppThemeBinding Dark={StaticResource Gray600}, Light={StaticResource Gray200}}"
+                            Stroke="{StaticResource Gray600}"
+                            StrokeShape="RoundRectangle 10"
+                            Margin="5">
+                        <Border.Behaviors>
+                            <behaviors:AnimationTriggerBehavior />
+                        </Border.Behaviors>
+                        <Grid>
+                            <Image Source="{Binding Cat.url}"
+                                   WidthRequest="150"
+                                   HeightRequest="150"
+                                   Aspect="AspectFill"
+                                   IsVisible="{Binding ShowPlaceholder, Converter={StaticResource InvertedBool}}" >
+                            </Image>
+                            <Image Source="cat.png"
+                                   WidthRequest="150"
+                                   HeightRequest="150"
+                                   Aspect="AspectFit"
+                                   Margin="5"
+                                   IsVisible="{Binding ShowPlaceholder}">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1"
+                                                  Command="{Binding Source={x:Reference GamePage}, Path=BindingContext.SelectCatCommand}"
+                                                  CommandParameter="{Binding .}"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Label Text="❌"
+                                   FontSize="100"
+                                   HorizontalOptions="Center"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalOptions="Center"
+                                   VerticalTextAlignment="Center"
+                                   IsVisible="{Binding IsIncorrect}"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </FlexLayout>
+        
+        <HorizontalStackLayout Grid.Row="2"
+                               HorizontalOptions="End"
+                               VerticalOptions="End"
+                               Margin="20">
+            <Label Text="Hard mode:  "
+                   VerticalTextAlignment="Center"
+                   VerticalOptions="Center"/>
+            <Switch IsToggled="{Binding IsHard}" />
+        </HorizontalStackLayout>
+
+        <BoxView Grid.RowSpan="3"
+                 BackgroundColor="Black"
+                 HorizontalOptions="Fill"
+                 VerticalOptions="Fill"
+                 Opacity="{OnPlatform Android={Binding Opacity}, Default=0.5}"
+                 IsVisible="{Binding IsBusy}"/>
+
+        <ActivityIndicator Grid.RowSpan="2"
+                           IsRunning="{Binding IsBusy}"
+                           IsVisible="{Binding IsBusy}"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" />
+    </Grid>
+
+</ContentPage>
