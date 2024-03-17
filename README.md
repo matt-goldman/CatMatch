@@ -26,6 +26,8 @@ Get it on Google Play and the App Store! (coming soon)
 
 [Rx.NET](https://github.com/dotnet/reactive)
 
+[The Cat API](https://thecatapi.com/)
+
 
 [Happy cat animation](https://lottiefiles.com/animations/cat-feeling-love-emotionsexpression-emojisticker-animation-lr3WdNpMuP) by [Abdul Latif](https://lottiefiles.com/animoox) on Lottiefiles
 
