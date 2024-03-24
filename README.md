@@ -34,3 +34,5 @@ Get it on Google Play and the App Store! (coming soon)
 [Sad cat animation](https://lottiefiles.com/animations/lazy-cat-j3KIEIX2NB) by [Manoj Kumar](https://lottiefiles.com/manoj61) on Lottiefiles
 
 Orange cat <a href="https://www.freepik.com/free-vector/sticker-template-cat-cartoon-character_18755727.htm#query=cat&position=4&from_view=author&uuid=4ad5e975-7d7f-42f4-9630-d2eaf7e7e18d">Image by brgfx</a> on Freepik
+
+Icon background provided by: <a href="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/">Free SVG Backgrounds and Patterns by SVGBackgrounds.com</a>
