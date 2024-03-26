@@ -1,56 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-               xmlns:lottie="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
-               Color="Transparent"
-               x:Class="CatMatch.Popups.ResultPopup">
-    <Border BackgroundColor="{StaticResource Gray400}"
-            StrokeThickness="0"
-            StrokeShape="RoundRectangle 10"
-            Margin="{OnPlatform iOS=0, Default=20}">
-        <Grid RowDefinitions="50,300,50"          
-              Padding="0,30">
-            <Label HorizontalOptions="Center"
-                   HorizontalTextAlignment="Center"
-                   FontSize="Large"
-                   TextColor="{StaticResource Primary}"
-                   FontFamily="WendyOneRegular"
-                   VerticalOptions="Center"
-                   x:Name="ResultLabel"/>
+<toolkit:Popup
+    x:Class="CatMatch.Popups.ResultPopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:lottie="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Color="Transparent">
+    <Border
+        Margin="{OnPlatform iOS=0,
+                            Default=20}"
+        BackgroundColor="{StaticResource Gray400}"
+        StrokeShape="RoundRectangle 10"
+        StrokeThickness="0">
+        <Grid Padding="0,30" RowDefinitions="50,300,50">
+            <Label
+                x:Name="ResultLabel"
+                FontFamily="WendyOneRegular"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                TextColor="{StaticResource Primary}"
+                VerticalOptions="Center" />
 
-            <lottie:SKLottieView Source="cat-happy.json"
-                                 VerticalOptions="Center"
-                                 HorizontalOptions="Center"
-                                 HeightRequest="300"
-                                 WidthRequest="300"
-                                 Grid.Row="1"
-                                 x:Name="HappyCat"/>
-            
-            <lottie:SKLottieView Source="sad-cat4.json"
-                                 VerticalOptions="Center"
-                                 HorizontalOptions="Center"
-                                 HeightRequest="300"
-                                 WidthRequest="300"
-                                 Grid.Row="1"
-                                 x:Name="SadCat"/>
+            <lottie:SKLottieView
+                x:Name="HappyCat"
+                Grid.Row="1"
+                HeightRequest="300"
+                HorizontalOptions="Center"
+                Source="cat-happy.json"
+                VerticalOptions="Center"
+                WidthRequest="300" />
 
-            <Button Text="Yay!"
-                    Clicked="CloseButton_Clicked"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    FontFamily="WendyOneRegular"
-                    TextColor="{StaticResource Primary}"
-                    BackgroundColor="{StaticResource PrimaryDark}"
-                    Margin="{OnPlatform iOS=20, Default=0}"
-                    Grid.Row="2"
-                    x:Name="CloseButton"/>
+            <lottie:SKLottieView
+                x:Name="SadCat"
+                Grid.Row="1"
+                HeightRequest="300"
+                HorizontalOptions="Center"
+                Source="sad-cat4.json"
+                VerticalOptions="Center"
+                WidthRequest="300" />
 
-            <lottie:SKConfettiView VerticalOptions="FillAndExpand"
-                                   HorizontalOptions="FillAndExpand"
-                                   Grid.RowSpan="3"
-                                   x:Name="Confetti"
-                                   InputTransparent="True"/>
+            <Button
+                x:Name="CloseButton"
+                Grid.Row="2"
+                Margin="{OnPlatform iOS=20,
+                                    Default=0}"
+                BackgroundColor="{StaticResource Primary}"
+                Clicked="CloseButton_Clicked"
+                FontFamily="WendyOneRegular"
+                HorizontalOptions="Center"
+                Text="Yay!"
+                TextColor="White"
+                VerticalOptions="Center" />
+
+            <lottie:SKConfettiView
+                x:Name="Confetti"
+                Grid.RowSpan="3"
+                HorizontalOptions="FillAndExpand"
+                InputTransparent="True"
+                VerticalOptions="FillAndExpand" />
         </Grid>
     </Border>
 </toolkit:Popup>
