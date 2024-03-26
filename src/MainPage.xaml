@@ -22,6 +22,8 @@
         
         <Label FontSize="48"
                Text="{Binding Timer}"
+               TextColor="{DynamicResource Primary}"
+               FontFamily="WendyOneRegular"
                HorizontalOptions="Center"
                VerticalOptions="Center"
                IsVisible="{Binding MatchedCatVisible, Converter={StaticResource InvertedBool}}"
@@ -32,9 +34,13 @@
                              Margin="0,0,20,0"
                              Grid.Row="1">
             <Label Text="Score:"
+                   FontFamily="WendyOneRegular"
+                   TextColor="{DynamicResource Primary}"
                    FontSize="Large"/>
             <Label Text="{Binding Score}"
                    FontSize="Large"
+                   TextColor="{DynamicResource Primary}"
+                   FontFamily="WendyOneRegular"
                    HorizontalOptions="End"/>
         </VerticalStackLayout>
 
@@ -106,9 +112,11 @@
                                VerticalOptions="End"
                                Margin="20">
             <Label Text="Hard mode:  "
+                   FontFamily="WendyOneRegular"
+                   TextColor="{DynamicResource Primary}"
                    VerticalTextAlignment="Center"
                    VerticalOptions="Center"/>
-            <Switch IsToggled="{Binding IsHard}" />
+            <Switch IsToggled="{Binding IsHard}"/>
         </HorizontalStackLayout>
 
         <BoxView Grid.RowSpan="3"

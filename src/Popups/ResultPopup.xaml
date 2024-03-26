@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
@@ -14,6 +14,8 @@
             <Label HorizontalOptions="Center"
                    HorizontalTextAlignment="Center"
                    FontSize="Large"
+                   TextColor="{StaticResource Primary}"
+                   FontFamily="WendyOneRegular"
                    VerticalOptions="Center"
                    x:Name="ResultLabel"/>
 
@@ -37,6 +39,9 @@
                     Clicked="CloseButton_Clicked"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
+                    FontFamily="WendyOneRegular"
+                    TextColor="{StaticResource Primary}"
+                    BackgroundColor="{StaticResource PrimaryDark}"
                     Margin="{OnPlatform iOS=20, Default=0}"
                     Grid.Row="2"
                     x:Name="CloseButton"/>
