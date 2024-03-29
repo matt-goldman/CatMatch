@@ -20,6 +20,32 @@
                FontFamily="WendyOneRegular"
                TextColor="{DynamicResource Primary}"/>
         
+        <VerticalStackLayout HorizontalOptions="Start"
+                             VerticalOptions="Start"
+                             Margin="20,0,0,0"
+                             Grid.Row="1">
+            <Label Text="Streak:"
+                   FontFamily="WendyOneRegular"
+                   TextColor="{DynamicResource Primary}"
+                   FontSize="Large"/>
+            <Label Text="{Binding Streak}"
+                   FontSize="Large"
+                   TextColor="{DynamicResource Primary}"
+                   FontFamily="WendyOneRegular"
+                   HorizontalOptions="Start"/>
+            
+            <Label Text="Best&#10;streak:"
+                   FontFamily="WendyOneRegular"
+                   TextColor="{DynamicResource Primary}"
+                   FontSize="Large"
+                   Margin="0,20,0,0"/>
+            <Label Text="{Binding HighStreak}"
+                   FontSize="Large"
+                   TextColor="{DynamicResource Primary}"
+                   FontFamily="WendyOneRegular"
+                   HorizontalOptions="Start"/>
+        </VerticalStackLayout>
+        
         <Label FontSize="48"
                Text="{Binding Timer}"
                TextColor="{DynamicResource Primary}"
@@ -35,9 +61,22 @@
                              Grid.Row="1">
             <Label Text="Score:"
                    FontFamily="WendyOneRegular"
+                   HorizontalOptions="End"
                    TextColor="{DynamicResource Primary}"
                    FontSize="Large"/>
             <Label Text="{Binding Score}"
+                   FontSize="Large"
+                   TextColor="{DynamicResource Primary}"
+                   FontFamily="WendyOneRegular"
+                   HorizontalOptions="End"/>
+            
+            <Label Text="High&#10;score:"
+                   FontFamily="WendyOneRegular"
+                   TextColor="{DynamicResource Primary}"
+                   FontSize="Large"
+                   HorizontalOptions="End"
+                   Margin="0,20,0,0"/>
+            <Label Text="{Binding HighScore}"
                    FontSize="Large"
                    TextColor="{DynamicResource Primary}"
                    FontFamily="WendyOneRegular"
