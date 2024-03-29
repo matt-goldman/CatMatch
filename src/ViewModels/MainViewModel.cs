@@ -35,6 +35,15 @@ public partial class MainViewModel : ObservableObject
 
     [ObservableProperty]
     private string _score = string.Empty;
+    
+    [ObservableProperty]
+    private string _highScore = string.Empty;
+    
+    [ObservableProperty]
+    private string _streak = string.Empty;
+    
+    [ObservableProperty]
+    private string _highStreak = string.Empty;
 
     private bool _correct = true;
 
@@ -55,6 +64,9 @@ public partial class MainViewModel : ObservableObject
     private void SubscribeToScore()
     {
         _scoreService.Score.Subscribe(score => Score = score);
+        _scoreService.HighScore.Subscribe(highScore => HighScore = highScore);
+        _scoreService.Streak.Subscribe(streak => Streak = streak);
+        _scoreService.HighStreak.Subscribe(highStreak => HighStreak = highStreak);
     }
 
     public async Task InitializeAsync()
@@ -117,6 +129,7 @@ public partial class MainViewModel : ObservableObject
         else
         {
             _correct = false;
+            _scoreService.ReserStreak();
             
             catVm.IsIncorrect = true;
 
