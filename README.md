@@ -6,26 +6,24 @@ I made this game because my daughter loves cats. And I needed something to keep 
 <br/><br/>
 Made with ♥️ with .NET MAUI
 
-## Screenshots
-
-<img src="https://github.com/matt-goldman/CatMatch/blob/main/assets/screenshot1.webp?raw=true" width=300 /> <img src="https://github.com/matt-goldman/CatMatch/blob/main/assets/screenshot2.webp?raw=true" width=300 /> <img src="https://github.com/matt-goldman/CatMatch/blob/main/assets/screenshot3.webp?raw=true" width=300 /> <img src="https://github.com/matt-goldman/CatMatch/blob/main/assets/screenshot4.webp?raw=true" width=300 /><img src="https://github.com/matt-goldman/CatMatch/blob/main/assets/screenshot5.webp?raw=true" width=300 />
-
 ## Installation
 
 <div style="display:flex; align-items:middle;">
   <a href='https://apps.apple.com/us/app/catmatch/id6480281162'>
     <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="./dark.png">
-        <img src='https://github.com/matt-goldman/CatMatch/blob/main/assets/app-store-white.svg' alt='Get it on the App Store' Height="75"/>
-    </picture>
-    <picture>
-        <source media="(prefers-color-scheme: light)" srcset="./dark.png">
-        <img src='https://github.com/matt-goldman/CatMatch/blob/main/assets/app-store-black.svg' alt='Get it on the App Store' Height="75"/>
+        <source media="(prefers-color-scheme: dark)" srcset="https://github.com/matt-goldman/CatMatch/blob/main/assets/app-store-white.svg">
+        <source media="(prefers-color-scheme: light)" srcset="https://github.com/matt-goldman/CatMatch/blob/main/assets/app-store-black.svg">
+        <img src='https://github.com/matt-goldman/CatMatch/blob/main/assets/app-store.svg' alt='Get it on the App Store' Height="75"/>
     </picture>
   </a>
   &nbsp;&nbsp;
   Google Play coming soon!
 </div>
+
+## Screenshots
+
+<img src="https://github.com/matt-goldman/CatMatch/blob/main/assets/screenshot1.webp?raw=true" width=300 /> <img src="https://github.com/matt-goldman/CatMatch/blob/main/assets/screenshot2.webp?raw=true" width=300 /> <img src="https://github.com/matt-goldman/CatMatch/blob/main/assets/screenshot3.webp?raw=true" width=300 /> <img src="https://github.com/matt-goldman/CatMatch/blob/main/assets/screenshot4.webp?raw=true" width=300 /><img src="https://github.com/matt-goldman/CatMatch/blob/main/assets/screenshot5.webp?raw=true" width=300 />
+
 
 ## Acknowledgements
 
