@@ -22,7 +22,7 @@ Made with ♥️ with .NET MAUI
 
 ## Screenshots
 
-<img src="https://github.com/matt-goldman/CatMatch/blob/main/assets/screenshot1.webp?raw=true" width=300 /> <img src="https://github.com/matt-goldman/CatMatch/blob/main/assets/screenshot2.webp?raw=true" width=300 /> <img src="https://github.com/matt-goldman/CatMatch/blob/main/assets/screenshot3.webp?raw=true" width=300 /> <img src="https://github.com/matt-goldman/CatMatch/blob/main/assets/screenshot4.webp?raw=true" width=300 /><img src="https://github.com/matt-goldman/CatMatch/blob/main/assets/screenshot5.webp?raw=true" width=300 />
+<img src="https://github.com/matt-goldman/CatMatch/blob/main/assets/screenshot1.webp?raw=true" width=180 /> <img src="https://github.com/matt-goldman/CatMatch/blob/main/assets/screenshot2.webp?raw=true" width=180 /> <img src="https://github.com/matt-goldman/CatMatch/blob/main/assets/screenshot3.webp?raw=true" width=180 /> <img src="https://github.com/matt-goldman/CatMatch/blob/main/assets/screenshot4.webp?raw=true" width=180 /><img src="https://github.com/matt-goldman/CatMatch/blob/main/assets/screenshot5.webp?raw=true" width=180 />
 
 
 ## Acknowledgements
