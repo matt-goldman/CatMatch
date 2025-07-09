@@ -1,10 +1,11 @@
 ﻿using CatMatch.Models;
 using CatMatch.Popups;
 using CatMatch.Services;
-using CommunityToolkit.Maui.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
+using CommunityToolkit.Maui;
+using CommunityToolkit.Maui.Extensions;
 
 namespace CatMatch.ViewModels;
 
@@ -13,7 +14,12 @@ public partial class MainViewModel : ObservableObject
     private readonly ICatService _catService;
     private readonly IScoreService _scoreService;
 
-    public ObservableCollection<CatCardViewModel> Cats { get; set; } = new();
+    private readonly PopupOptions _popupOptions = new PopupOptions()
+    {
+        Shape = null 
+    };
+
+    public ObservableCollection<CatCardViewModel> Cats { get; set; } = [];
 
     [ObservableProperty]
     private string _buttonText;
@@ -117,7 +123,7 @@ public partial class MainViewModel : ObservableObject
         
         if (MatchedCat == catVm.Cat)
         {
-            await App.Current.MainPage.ShowPopupAsync(new ResultPopup(true));
+            await App.Current.Windows[0].Page.ShowPopupAsync(new ResultPopup(true), _popupOptions);
 
             if (_correct)
             {
@@ -133,7 +139,7 @@ public partial class MainViewModel : ObservableObject
             
             catVm.IsIncorrect = true;
 
-            await App.Current.MainPage.ShowPopupAsync(new ResultPopup(false));
+            await App.Current.Windows[0].Page.ShowPopupAsync(new ResultPopup(false), _popupOptions);
         }
 
     }

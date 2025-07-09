@@ -27,6 +27,6 @@ public partial class ResultPopup : Popup
 
     private void CloseButton_Clicked(object sender, EventArgs e)
     {
-		this.Close();
+	    CloseAsync();
     }
 }
